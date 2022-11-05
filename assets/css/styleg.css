@@ -1,0 +1,187 @@
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*,
+*:before
+*:after{
+    box-sizing: inherit;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-size: 1.6rem;
+    font-family: 'Inter', sans-serif;
+    color: #FFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #00001e;
+    animation: filter 1.5s ease-in-out;
+
+}
+
+body, button{
+    font-family: 'Inter', sans-serif;
+}
+.container{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 60rem;
+}
+img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    max-width: 60rem;
+
+}
+h1{
+    font-family: 'Eater', cursive;
+    font-size: 6.6rem;
+
+}
+@media(min-width:560px){
+    h1{
+        font-size: 9.6rem;
+    }
+}
+@media(min-width:480px){
+    h1{
+        font-size: 7.6rem;
+    }
+}
+button{
+    border: none;
+}
+@keyframes filter{
+    0%{
+        filter: blur(.8rem);
+    }
+    100%{
+        filter: blur(0);
+    }
+
+}
+/* Game*/
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 5rem;
+}
+@media(min-width:480px){
+    .box{
+        row-gap: 2rem;
+    }
+}
+@media(min-width:560px){
+    .box{
+        row-gap: 5rem;
+    }
+}
+.box_h1{
+    color: #F99016;
+    transition: .3s ease;
+}
+.box_h1:hover{
+    color: #FA7113;
+}
+/*card*/
+.card{
+    /*background: #ffff;*/
+    background: white;
+    width: 60rem;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 1rem;
+    position: relative;
+}
+@media(max-width:560px){
+    .card{
+        scale: .8;
+    }
+}
+@media(max-width:480px){
+    .card{
+        scale: .5;
+    }
+}
+
+.card_label{
+    border: .4rem solid #00001e;
+    border-bottom: none;
+    width: 100%;
+    height: 33.33%;
+    padding: .5rem;
+    position: relative;
+}
+.card_label:nth-child(1){
+    border-top: none;
+}
+.card_label .card_input{
+    position: relative;
+    appearance: none;
+    z-index: 1;
+}
+.card_label .card_i{
+    position: absolute;
+    top: 0;
+    left: 6px;
+    
+    width: 98%;
+    height: 100%;
+    background-size: 60rem;
+}
+.card_label:nth-child(1) .card_i{
+    background-image: url(../img/j1.png);
+    animation: slider .5s steps(3) infinite;
+}
+.card_label:nth-child(2) .card_i{
+    background-image: url(../img/j2.png);
+    animation: slider .4s steps(3) infinite;
+}
+.card_label:nth-child(3) .card_i{
+    background-image: url(../img/j3.png);
+    animation: slider .7s steps(3) infinite;
+}
+.card_label .card_input:checked ~.card_i{
+    animation-play-state: paused;
+}
+@keyframes slider{
+    0%{
+        background-position: 0;
+    }
+    100%{
+        background-position: 60rem;
+    }
+}
+
+.box_button{
+    font-size: 2rem;
+    color: #ffff;
+    font-weight: 700;
+    background: rgb(246, 205, 29);
+    background: linear-gradient(180deg, #f6cd1d 0%, #fa7113 100%);
+    border-radius: 3rem;
+    padding: 1.2rem 3rem 1.2rem 3rem;
+    cursor: pointer;
+    transition: .3s ease;
+}
+@media(min-width:480px){
+    .box_button{
+        font-size: 2rem;
+        padding: 1.4rem 6rem 1.4rem 6rem;
+    }
+}
+.box_button:active{
+    background: linear-gradient(180deg, #fa7113 0%, #f6cd1d 100%);
+    scale: .9;
+}
